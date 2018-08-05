@@ -7,7 +7,6 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public class ReadWriteThreadSynTest {
-
     class SynObject {
         int i = 0;
 
@@ -22,16 +21,13 @@ public class ReadWriteThreadSynTest {
             this.i = i;
         }
 
-
         public int getI() throws InterruptedException {
             TimeUnit.SECONDS.sleep(5);
             return i;
         }
     }
 
-
     private ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(3, 4, 100, TimeUnit.SECONDS, new LinkedBlockingQueue<>());
-
 
     /**
      * 读线程先读,但没有加锁,然后写线程加锁了,读线程是否需要等待?
@@ -39,7 +35,6 @@ public class ReadWriteThreadSynTest {
     @Test
     public void test() throws InterruptedException {
         SynObject synObject = new SynObject();
-
         threadPoolExecutor.execute(() -> {
             try {
                 System.out.println("read thread. i = " + synObject.getI());
@@ -56,7 +51,6 @@ public class ReadWriteThreadSynTest {
 
             }
         });
-
     }
 
 
