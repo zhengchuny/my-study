@@ -1,0 +1,13 @@
+target/
+*.iml
+.git
+logs
+.idea/
+.DS_Store
+.idea
+*.class
+*.jar
+*.war
+catalina.home_IS_UNDEFINED/
+generated/
+/classes/
