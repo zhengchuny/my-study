@@ -1,0 +1,7 @@
+1.float的比较,可以用 Float.compare().double的比较可以使用,Double.compare().
+2.Arrays.equals()会比较数组中的每一个元素.
+3.不要将equals中的对象Object类型替换成其他类型,
+    public boolean equals(MyClass o){}
+    这个方法并没有覆盖 Object.equals方法
+4.重写equals时候,一定要重写hashCode方法.
+5.始终要覆盖toString

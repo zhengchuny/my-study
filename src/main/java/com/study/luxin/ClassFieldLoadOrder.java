@@ -8,7 +8,7 @@ package com.study.luxin;
 public class ClassFieldLoadOrder {
     private static ClassFieldLoadOrder classFieldLoadOrder = new ClassFieldLoadOrder();
     private static int a;
-    private static int b = 10;
+    public  static int b = 10;
     //private static ClassFieldLoadOrder classFieldLoadOrder = new ClassFieldLoadOrder();
 
     public ClassFieldLoadOrder() {

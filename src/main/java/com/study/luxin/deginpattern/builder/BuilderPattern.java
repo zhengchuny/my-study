@@ -36,6 +36,12 @@ public class BuilderPattern {
 
         }
 
+
+
+        public static Builder builder(){
+            return new Builder();
+        }
+
         public Builder setDay(int day) {
             this.day = day;
             return this;
@@ -66,7 +72,7 @@ public class BuilderPattern {
             return this;
         }
 
-        public BuilderPattern builder() {
+        public BuilderPattern build() {
             return new BuilderPattern(this);
         }
     }
@@ -77,7 +83,9 @@ public class BuilderPattern {
 
 
     public static void main(String[] args) {
-        BuilderPattern builderPattern = new BuilderPattern.Builder().setAge(10).setDay(10).builder();
+        BuilderPattern builderPattern = new BuilderPattern.Builder().setAge(10).setDay(10).build();
+
+        BuilderPattern builderPattern1 = BuilderPattern.Builder.builder().setAge(1).build();
 
         Builder builder = new Builder();
 

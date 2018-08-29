@@ -1,0 +1,18 @@
+### Get request with a header
+GET https://httpbin.org/ip
+Accept: application/json
+
+### Get request with parameter
+GET https://httpbin.org/get?show_env=1
+Accept: application/json
+
+### Get request with environment variables
+GET {{host}}/get?show_env={{show_env}}
+Accept: application/json
+
+###
+GET http://localhost:8080/crmrest/tenant_function/find_ei_by_offset_limit?offset=10&limit=10
+Accept: application/json
+
+###
+
