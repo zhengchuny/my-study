@@ -12,7 +12,7 @@ public class ReadWriteThreadSynTest {
 
         public SynObject() {
             while (i < 10) {
-                i += i;
+                i += 1;
             }
         }
 
@@ -30,7 +30,7 @@ public class ReadWriteThreadSynTest {
     private ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(3, 4, 100, TimeUnit.SECONDS, new LinkedBlockingQueue<>());
 
     /**
-     * 读线程先读,但没有加锁,然后写线程加锁了,读线程是否需要等待?
+     * 读线程先读,但没有加锁,读线程是否需要等待?
      */
     @Test
     public void test() throws InterruptedException {
@@ -51,6 +51,36 @@ public class ReadWriteThreadSynTest {
 
             }
         });
+    }
+
+
+    /**
+     * 写线程先写,读线程后读, 写线程没有释放锁,读线程能读出来么?
+     */
+    @Test
+    public void test1() throws InterruptedException {
+        SynObject synObject = new SynObject();
+        threadPoolExecutor.execute(() -> {
+            try {
+                System.out.println("start write !");
+                synObject.setI(100);
+                System.out.println("write done!");
+            } catch (InterruptedException e) {
+
+            }
+        });
+
+        TimeUnit.SECONDS.sleep(1);
+
+        threadPoolExecutor.execute(() -> {
+            try {
+                System.out.println("strat read!");
+                System.out.println("read thread. i = " + synObject.getI());
+            } catch (InterruptedException e) {
+
+            }
+        });
+        TimeUnit.SECONDS.sleep(19);
     }
 
 

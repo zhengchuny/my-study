@@ -122,7 +122,7 @@ public class TowSum {
             }
         }
 
-        if(l2!=null){
+        if (l2 != null) {
             last.next = l2;
         }
 
@@ -166,5 +166,29 @@ public class TowSum {
         System.out.println();
     }
 
+
+    // 两个大数相加
+    private int[] towBigNumSum(int[] s1, int[] s2) {
+        int carry = 0;
+        int p1 = s1.length - 1;
+        int p2 = s2.length - 1;
+
+        int[] result = new int[p1 + p2 + 1];
+        int j = p1 + p2;
+
+        while (carry > 0 || p1 >= 0 || p2 >= 0) {
+            int sum = (p1 >= 0 ? s1[p1] : 0) + (p2 >= 0 ? s2[p2] : 0) + carry;
+            result[j--] = sum % 10;
+            if (sum >= 10) {
+                carry = 1;
+            } else {
+                carry = 0;
+            }
+            p1--;
+            p2--;
+        }
+        System.out.println(Arrays.toString(result));
+        return result;
+    }
 
 }
