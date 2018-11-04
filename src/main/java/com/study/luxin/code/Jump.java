@@ -1,4 +1,4 @@
-package com.study.luxin.leetcode;
+package com.study.luxin.code;
 
 import com.google.common.collect.Lists;
 import org.junit.Test;
@@ -37,7 +37,7 @@ public class Jump {
 
     public List<Integer> minJump(int[] nums) {
         List<Integer> list = Lists.newArrayList();
-        int p = 0;
+        int p;
         for (int i = 0; i < nums.length; i++) {
             p = findRangeMaxPosition(nums, i);
             if (p + nums[p] <= i) {
@@ -65,7 +65,7 @@ public class Jump {
     }
 
     @Test
-    public void test(){
+    public void test() {
         System.out.println(minJump(nums1));
     }
 

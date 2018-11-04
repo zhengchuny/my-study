@@ -1,4 +1,4 @@
-package com.study.luxin.leetcode;
+package com.study.luxin.code;
 
 import org.junit.Test;
 

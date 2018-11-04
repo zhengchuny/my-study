@@ -1,4 +1,4 @@
-package com.study.luxin.leetcode.sort;
+package com.study.luxin.code.sort;
 
 /**
  * Created by lx on 08/07/2018.

@@ -1,4 +1,4 @@
-package com.study.luxin.offer;
+package com.study.luxin.sword;
 
 import org.junit.Test;
 
