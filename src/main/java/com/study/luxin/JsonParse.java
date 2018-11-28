@@ -5,7 +5,6 @@ import org.junit.Test;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
@@ -40,6 +39,11 @@ public class JsonParse {
             System.out.println();
         });
 
+       /* for (Map.Entry<String, Object> entity : argMap.entrySet()) {
+            System.out.println(entity.getKey());
+            System.out.println(entity.getValue());
+            System.out.println();
+        }*/
     }
 
 
